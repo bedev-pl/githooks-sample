@@ -1,0 +1,10 @@
+#!/bin/bash
+
+pattern='^(\bRBMK)-[0-9]+'
+msg="Aborting commmit. Your commit message doesn't match required pattern!"
+
+if ! grep -iqE "$pattern" "$1"; then
+	echo "$msg"
+	exit 1;
+fi
+echo "Commit message OK!"
