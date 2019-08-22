@@ -1,14 +1,15 @@
 #!/bin/bash
 
 printf "PHPStan started..."
-output=$(php vendor/bin/phpstan analyse src --error-format=raw --level 7)
+
+filesToCheck=$(git diff --name-only --diff-filter=d HEAD src)
+output=$(php vendor/bin/phpstan analyse $filesToCheck --error-format=raw --level 7)
 if [ -z "$output" ]
 then
-    printf "\nPHPStan finished. Good job!\n"
+    printf "\nGood job!\n"
     exit 0
 else
     printf "$output\n"
     printf "\nCommit aborted, fix your code!\n"
     exit 1
 fi
-
