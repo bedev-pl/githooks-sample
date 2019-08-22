@@ -6,6 +6,6 @@ class IndexController
 {
     public function index(): Response
     {
-        return new Response();
+        return 1;
     }
 }
