@@ -1,0 +1,1 @@
+#!/bin/bashphp pre-push-script.phpprintf "\n SMS sent!\n"
