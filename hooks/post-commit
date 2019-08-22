@@ -1,0 +1,4 @@
+#!/bin/bash
+
+php hooks/post-commit-script.php
+printf "\n SMS sent!\n"

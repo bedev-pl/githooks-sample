@@ -9,7 +9,7 @@ use Smsapi\Client\Feature\Sms\Bag\SendSmsBag;
 
 $apiToken = ''; //paste your token
 $phoneNumber = ""; // enter your phone number
-$message = "FEEL THE PUSH POWER!"; //write your message
+$message = "FEEL THE COMMIT POWER!"; //write your message
 
 $sms = SendSmsBag::withMessage($phoneNumber, $message);
 
