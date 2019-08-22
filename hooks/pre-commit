@@ -1,0 +1,14 @@
+#!/bin/bash
+
+printf "PHPStan started..."
+output=$(php vendor/bin/phpstan analyse src --error-format=raw --level 7)
+if [ -z "$output" ]
+then
+    printf "\nPHPStan finished. Good job!\n"
+    exit 0
+else
+    printf "$output\n"
+    printf "\nCommit aborted, fix your code!\n"
+    exit 1
+fi
+
